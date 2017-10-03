@@ -25,9 +25,10 @@ def blog():
     if request.method == 'POST':
         blog_title = request.form['title']
         blog_body = request.form['body']
-        new_blog = Blog(blog_title)
+        new_blog = Blog(blog_title, blog_body)
         db.session.add(new_blog)
         db.session.commit()
+       
 
     
     blogs = Blog.query.all()
@@ -38,12 +39,14 @@ def blog():
 @app.route('/newpost', methods=['POST', 'GET'])
 def new_post():
 
-    # new_post = int(request.form['post-id'])
-    # post = Post.query.get(post_id)
-    # post.completed = True
-    # db.session.add(post)
-    # db.session.commit()
+    if request.method == 'POST':
+        blog_title = request.form['title']
+        blog_body = request.form['body']
+        new_blog = Blog(blog_title, blog_body)
+        db.session.add(new_blog)
+        db.session.commit()
 
+        
     return render_template('/newpost.html')
 
 
