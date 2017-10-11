@@ -5,15 +5,14 @@
 <h1><center>Add a Blog Entry</center></h1>
 
 <form method='post'>
-	<label>Title for your new blog:
-		<input type ="text" name="title"/>
-		<br>
-	</label>
+	<p><label>Title for your new blog:</label></p>
+		<p><input type ="text" name="title"/></p>
+		{{error['blog_error']}} 
 	<br>
-	<label>Your new blog:
-		<textarea name="body" cols="50" rows="10"></textarea>
-		<br>
-	</label>
+	<p><label>Your new blog:</label></p>
+		<p><textarea name="body" cols="50" rows="10"></textarea></p>
+		{{error['blog_error']}} 
+	
 	<br>
 		<input type="submit" value="Add Entry"/>
 </form>
