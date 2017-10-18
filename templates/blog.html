@@ -8,9 +8,16 @@
             <h3><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h3>
             
                 {{blog.body}} 
+
+             
+
+             <h6>Written by <a href="/blog?user={{blog.owner.username}}">{{blog.owner.username}}</a></h6>
+            
          
-       
             {% endfor %}
+       
+
+         
     
 
    {% endblock %}
